@@ -468,7 +468,7 @@ Heb je een fout gevonden of suggestie voor verbetering?
 
 _(Nog te bepalen – afhankelijk van HBO-i bronmateriaal licentie)_
 
-De code in deze repository (MCP server, tooling) valt onder [MIT License].  
+De code in deze repository (MCP server, tooling) valt onder [GNU General Public License v3.0](LICENSE).  
 De HBO-i dataset zelf volgt de licentie van de officiële domeinbeschrijving.
 
 ---
