@@ -1,0 +1,4 @@
+# Docker-specific Yarn configuration
+nodeLinker: node-modules
+
+

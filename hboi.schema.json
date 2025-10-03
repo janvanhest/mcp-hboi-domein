@@ -1,0 +1,588 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/hboi.schema.json",
+  "title": "HBO-i Domeinbeschrijving – Canonieke Dataset",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "dataset_version": { "type": "string" },
+        "generated_at": { "type": "string", "format": "date-time" },
+        "language": { "type": "string", "default": "nl" },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "title": { "type": "string" },
+            "publisher": { "type": "string" },
+            "year": { "type": "integer" },
+            "isbn": { "type": "string" },
+            "license": { "type": "string" },
+            "license_url": { "type": "string" },
+            "document_url": { "type": "string" }
+          },
+          "required": ["title", "publisher", "year", "isbn", "license"]
+        }
+      },
+      "required": [
+        "schema_version",
+        "dataset_version",
+        "generated_at",
+        "language",
+        "source"
+      ]
+    },
+
+    "raamwerken": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ecf": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "areas": {
+              "type": "array",
+              "items": { "type": "string", "enum": ["Plan", "Build", "Run"] },
+              "uniqueItems": true
+            },
+            "activity_area_mapping": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "activity_id": {
+                    "type": "string",
+                    "enum": [
+                      "act.analyseren",
+                      "act.adviseren",
+                      "act.ontwerpen",
+                      "act.realiseren",
+                      "act.manage_control"
+                    ]
+                  },
+                  "ecf_area": {
+                    "type": "string",
+                    "enum": ["Plan", "Build", "Run"]
+                  },
+                  "notes": { "type": "string" }
+                },
+                "required": ["activity_id", "ecf_area"]
+              }
+            }
+          },
+          "required": ["areas", "activity_area_mapping"]
+        },
+        "sfia": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "levels": {
+              "type": "array",
+              "items": { "type": "integer", "minimum": 1, "maximum": 7 },
+              "uniqueItems": true
+            },
+            "notes": { "type": "string" }
+          }
+        },
+        "nlqf_eqf_qf": {
+          "type": "array",
+          "description": "Crosswalk van kwalificaties (AD/B/M) met NLQF/EQF/QF-EHEA en e-CF/SFIA indicaties.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "qualification": {
+                "type": "string",
+                "enum": [
+                  "Associate degree",
+                  "Bachelor",
+                  "Professional master",
+                  "PhD",
+                  "Basis-educatie",
+                  "MBO1",
+                  "MBO2",
+                  "MBO3",
+                  "MBO4/HAVO",
+                  "VWO"
+                ]
+              },
+              "nlqf": { "type": "integer", "minimum": 1, "maximum": 8 },
+              "eqf": { "type": "integer", "minimum": 1, "maximum": 8 },
+              "qf_ehea_cycle": {
+                "type": "string",
+                "enum": ["short", "1", "2", "3", ""]
+              },
+              "ecf_dimension3_hint": { "type": "string" },
+              "sfia_level_hint": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 7
+              },
+              "hboi_beheersingsniveau_hint": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4
+              }
+            },
+            "required": ["qualification", "nlqf", "eqf"]
+          }
+        },
+        "beheersingsniveaus_crosswalk": {
+          "type": "array",
+          "description": "Mapping van HBO-i beheersingsniveaus naar externe raamwerken.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "hboi_niveau": { "type": "integer", "enum": [1, 2, 3, 4] },
+              "nlqf": { "type": "integer", "enum": [5, 6, 7, 8] },
+              "qf_ehea": { "type": "string", "enum": ["short", "first", "second", "third"] },
+              "eqf": { "type": "integer", "enum": [5, 6, 7, 8] },
+              "ecf_proficiency": { "type": "string", "enum": ["e2", "e3", "e4", "e5"] },
+              "sfia_responsibility": { "type": "integer", "enum": [2, 3, 4, 5] },
+              "bron": { "$ref": "#/$defs/Bron" }
+            },
+            "required": ["hboi_niveau", "nlqf", "qf_ehea", "eqf", "ecf_proficiency", "sfia_responsibility", "bron"]
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      }
+    },
+
+    "beheersingsniveaus": {
+      "type": "array",
+      "description": "Vier niveaus met criteria zelfstandigheid/complexiteit/inhoud.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "integer", "enum": [1, 2, 3, 4] },
+          "naam": {
+            "type": "string",
+            "enum": [
+              "Taakgericht",
+              "Probleemgericht",
+              "Situatiegericht",
+              "Professiegericht"
+            ]
+          },
+          "beschrijving": { "type": "string" },
+          "beschrijving_canoniek": { "type": "string" },
+          "bron": { "$ref": "#/$defs/Bron" },
+          "criteria": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "zelfstandigheid": { "type": "string" },
+              "complexiteit_context": { "type": "string" },
+              "complexiteit_inhoud": { "type": "string" }
+            },
+            "required": ["zelfstandigheid", "complexiteit_context", "complexiteit_inhoud"]
+          }
+        },
+        "required": ["id", "naam", "beschrijving", "criteria"]
+      },
+      "minItems": 4,
+      "uniqueItems": true
+    },
+
+    "activiteiten": {
+      "type": "array",
+      "description": "Vijf activiteiten gebaseerd op SDLC.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "act.analyseren",
+              "act.adviseren",
+              "act.ontwerpen",
+              "act.realiseren",
+              "act.manage_control"
+            ]
+          },
+          "naam": {
+            "type": "string",
+            "enum": [
+              "Analyseren",
+              "Adviseren",
+              "Ontwerpen",
+              "Realiseren",
+              "Manage & Control"
+            ]
+          },
+          "beschrijving": { "type": "string" },
+          "beschrijving_canoniek": { "type": "string" },
+          "bron": { "$ref": "#/$defs/Bron" },
+          "koppelingen": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "ecf_areas": {
+                "type": "array",
+                "items": { "type": "string", "enum": ["Plan", "Build", "Run"] },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "sfia_note": { "type": "string" },
+              "ecf_context": { "type": "string" }
+            }
+          },
+          "kwaliteitsaspecten": {
+            "type": "array",
+            "description": "Kwaliteitsaspecten die van groot belang zijn voor alle activiteiten.",
+            "items": {
+              "type": "string",
+              "enum": ["security", "budget", "tijd", "duurzaamheid"]
+            },
+            "uniqueItems": true
+          },
+          "aliases": {
+            "type": "array",
+            "items": { "type": "string" },
+            "uniqueItems": true
+          }
+        },
+        "required": ["id", "naam", "beschrijving"]
+      },
+      "minItems": 5,
+      "uniqueItems": true
+    },
+
+    "architectuurlagen": {
+      "type": "array",
+      "description": "Vijf lagen: gebruikersinteractie, organisatieprocessen, infrastructuur, software, hardware interfacing.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "arch.gebruikersinteractie",
+              "arch.organisatieprocessen",
+              "arch.infrastructuur",
+              "arch.software",
+              "arch.hardware_interfacing"
+            ]
+          },
+          "naam": {
+            "type": "string",
+            "enum": [
+              "Gebruikersinteractie",
+              "Organisatieprocessen",
+              "Infrastructuur",
+              "Software",
+              "Hardware interfacing"
+            ]
+          },
+          "beschrijving": { "type": "string" },
+          "beschrijving_canoniek": { "type": "string" },
+          "bron": { "$ref": "#/$defs/Bron" },
+          "aliases": {
+            "type": "array",
+            "items": { "type": "string" },
+            "uniqueItems": true
+          },
+          "activiteit_niveau_beschrijvingen": {
+            "type": "array",
+            "description": "Specifieke beschrijvingen per activiteit en beheersingsniveau binnen deze architectuurlaag.",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "activiteit_id": {
+                  "type": "string",
+                  "enum": [
+                    "act.analyseren",
+                    "act.adviseren", 
+                    "act.ontwerpen",
+                    "act.realiseren",
+                    "act.manage_control"
+                  ]
+                },
+                "beheersingsniveau_id": { "type": "integer", "enum": [1, 2, 3, 4] },
+                "beschrijving": { "type": "string" },
+                "beschrijving_canoniek": { "type": "string" },
+                "bron": { "$ref": "#/$defs/Bron" },
+                "sub_aspect": { "type": "string" }
+              },
+              "required": ["activiteit_id", "beheersingsniveau_id", "beschrijving"]
+            }
+          }
+        },
+        "required": ["id", "naam", "beschrijving"]
+      },
+      "minItems": 5,
+      "uniqueItems": true
+    },
+
+    "professional_skills": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "aandachtsgebieden": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "ps.toekomstgericht_organiseren",
+                  "ps.onderzoekend_vermogen",
+                  "ps.persoonlijk_leiderschap",
+                  "ps.doelgericht_interacteren"
+                ]
+              },
+              "naam": {
+                "type": "string",
+                "enum": [
+                  "Toekomstgericht organiseren",
+                  "Onderzoekend vermogen",
+                  "Persoonlijk leiderschap",
+                  "Doelgericht interacteren"
+                ]
+              },
+              "beschrijving": { "type": "string" },
+              "competenties": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^ps\\.competentie\\.[a-z0-9_.-]+$"
+                    },
+                    "naam": {
+                      "type": "string",
+                      "enum": [
+                        "Organisatorische context",
+                        "Ethiek",
+                        "Procesmanagement",
+                        "Methodische probleemaanpak",
+                        "Onderzoek",
+                        "Oplossing",
+                        "Ondernemend zijn",
+                        "Persoonlijke ontwikkeling",
+                        "Persoonlijke profilering",
+                        "Partners",
+                        "Communicatie",
+                        "Samenwerken"
+                      ]
+                    },
+                    "beschrijving": { "type": "string" }
+                  },
+                  "required": ["id", "naam", "beschrijving"]
+                },
+                "minItems": 3,
+                "maxItems": 3,
+                "uniqueItems": true
+              }
+            },
+            "required": ["id", "naam", "beschrijving", "competenties"]
+          },
+          "minItems": 4,
+          "maxItems": 4,
+          "uniqueItems": true
+        }
+      },
+      "required": ["aandachtsgebieden"]
+    },
+
+    "beroepstaken": {
+      "type": "array",
+      "description": "Exemplarische beroepstaken per laag × activiteit × niveau.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^bt\\.[a-z0-9_.-]+$" },
+          "titel": { "type": "string" },
+          "beschrijving": { "type": "string" },
+          "activiteit_id": {
+            "type": "string",
+            "enum": [
+              "act.analyseren",
+              "act.adviseren",
+              "act.ontwerpen",
+              "act.realiseren",
+              "act.manage_control"
+            ]
+          },
+          "architectuurlaag_id": {
+            "type": "string",
+            "enum": [
+              "arch.gebruikersinteractie",
+              "arch.organisatieprocessen",
+              "arch.infrastructuur",
+              "arch.software",
+              "arch.hardware_interfacing"
+            ]
+          },
+          "beheersingsniveau_id": { "type": "integer", "enum": [1, 2, 3, 4] },
+          "kwaliteitseisen": {
+            "type": "array",
+            "description": "Optionele explicitering van quality concerns zoals security, privacy, duurzaamheid, performance.",
+            "items": {
+              "type": "string",
+              "enum": [
+                "security",
+                "privacy",
+                "duurzaamheid",
+                "budget",
+                "tijd",
+                "performance",
+                "toegankelijkheid",
+                "compliance"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "voorbeelden": {
+            "type": "array",
+            "items": { "type": "string" },
+            "uniqueItems": true
+          },
+          "bronverwijzing": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pagina": { "type": "integer", "minimum": 1 },
+              "paragraaf": { "type": "string" }
+            }
+          },
+          "role": {
+            "type": "string",
+            "enum": ["exemplar", "definitief"]
+          }
+        },
+        "required": [
+          "id",
+          "beschrijving",
+          "activiteit_id",
+          "architectuurlaag_id",
+          "beheersingsniveau_id"
+        ]
+      },
+      "uniqueItems": true
+    },
+
+    "verbanden": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["activiteit_naar_professional_skills"],
+      "properties": {
+        "activiteit_naar_professional_skills": {
+          "type": "array",
+          "description": "Optioneel: mapping conform Bijlage 3; per activiteit de relevante competenties.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "activiteit_id": {
+                "type": "string",
+                "enum": [
+                  "act.analyseren",
+                  "act.adviseren",
+                  "act.ontwerpen",
+                  "act.realiseren",
+                  "act.manage_control"
+                ]
+              },
+              "competentie_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^ps\\.competentie\\.[a-z0-9_.-]+$"
+                },
+                "uniqueItems": true
+              },
+              "notities": { "type": "string" }
+            },
+            "required": ["activiteit_id", "competentie_ids"]
+          }
+        }
+      }
+    },
+
+    "bijlagen": {
+      "type": "object",
+      "description": "Machine-leesbare bijlagen uit het document.",
+      "properties": {
+        "bronnen": {
+          "type": "array",
+          "description": "Bibliografie en bronnenlijst.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "titel": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "bron": { "$ref": "#/$defs/Bron" }
+            },
+            "required": ["titel", "bron"]
+          }
+        },
+        "afkortingen": {
+          "type": "array",
+          "description": "Lijst van afkortingen en hun uitleg.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "term": { "type": "string" },
+              "uitleg": { "type": "string" },
+              "bron": { "$ref": "#/$defs/Bron" }
+            },
+            "required": ["term", "uitleg", "bron"]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "meta",
+    "beheersingsniveaus",
+    "activiteiten",
+    "architectuurlagen",
+    "professional_skills",
+    "beroepstaken",
+    "raamwerken",
+    "bijlagen"
+  ],
+  "$defs": {
+    "Bron": {
+      "type": "object",
+      "required": ["pagina"],
+      "properties": {
+        "pagina": { "type": "integer", "minimum": 1 },
+        "sectie": { "type": "string" },
+        "tabel": { "type": "string" },
+        "paragraaf": { "type": "string" }
+      }
+    },
+    "CanoniekTekst": {
+      "type": "object",
+      "required": ["beschrijving_canoniek", "bron"],
+      "properties": {
+        "beschrijving_canoniek": { "type": "string", "minLength": 3 },
+        "bron": { "$ref": "#/$defs/Bron" }
+      }
+    }
+  }
+}

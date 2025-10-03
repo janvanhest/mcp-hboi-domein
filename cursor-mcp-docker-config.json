@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "hboi-docker": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "--network=host",
+        "hboi-mcp-server:latest"
+      ],
+      "env": {}
+    }
+  }
+}
+
+

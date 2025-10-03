@@ -1,0 +1,1208 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "dataset_version": "example-1.0.0",
+    "generated_at": "2024-01-01T00:00:00Z",
+    "language": "nl",
+    "source": {
+      "title": "HBO-i Domeinbeschrijving - Voorbeeld Dataset",
+      "publisher": "HBO-i",
+      "year": 2024,
+      "isbn": "978-90-834007-1-6",
+      "license": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "document_url": "https://www.hbo-i.nl"
+    }
+  },
+  "beheersingsniveaus": [
+    {
+      "id": 1,
+      "naam": "Taakgericht",
+      "beschrijving": "Werkt onder algemene richtlijnen in een omgeving waar onvoorspelbare veranderingen optreden.",
+      "beschrijving_canoniek": "Werkt onder algemene richtlijnen in een omgeving waar onvoorspelbare veranderingen optreden.",
+      "bron": {
+        "pagina": 8,
+        "sectie": "2.1 Beheersingsniveaus"
+      },
+      "criteria": {
+        "zelfstandigheid": "Werkt onder algemene richtlijnen in een omgeving waar onvoorspelbare veranderingen optreden.",
+        "complexiteit_context": "Gestructureerd - voorspelbare context, probleem gedefinieerd, aanpak en oplossing bekend bij opdrachtgever.",
+        "complexiteit_inhoud": "Enkele basisconcepten die voortbouwen op vooropleiding."
+      }
+    },
+    {
+      "id": 2,
+      "naam": "Probleemgericht",
+      "beschrijving": "Lost zelfstandig interactieve vraagstukken op die voortkomen uit projectactiviteiten.",
+      "criteria": {
+        "zelfstandigheid": "Lost zelfstandig interactieve vraagstukken op die voortkomen uit projectactiviteiten.",
+        "complexiteit_context": "Gestructureerd - onvoorspelbare context, probleem gegeven, keuze van aanpak en oplossingsruimte beperkt.",
+        "complexiteit_inhoud": "Combinatie van meerdere basisconcepten en enkele verdiepingsconcepten die voortbouwen op basisconcepten."
+      }
+    },
+    {
+      "id": 3,
+      "naam": "Situatiegericht",
+      "beschrijving": "Werkt zelfstandig om interactieve problemen op te lossen. Heeft een positief effect op teamprestaties.",
+      "criteria": {
+        "zelfstandigheid": "Werkt zelfstandig om interactieve problemen op te lossen. Heeft een positief effect op teamprestaties.",
+        "complexiteit_context": "Gestructureerd - onvoorspelbare context, vage problemen, aanpak en oplossingsruimte open.",
+        "complexiteit_inhoud": "Combinatie van meerdere concepten voor verdieping en innovatie in de lokale situatie."
+      }
+    },
+    {
+      "id": 4,
+      "naam": "Professiegericht",
+      "beschrijving": "Coördineert en stuurt. Pakt vraagstukken aan met veel interacterende factoren.",
+      "criteria": {
+        "zelfstandigheid": "Coördineert en stuurt. Pakt vraagstukken aan met veel interacterende factoren.",
+        "complexiteit_context": "Ongestructureerd multidisciplinair en/of specialistisch context.",
+        "complexiteit_inhoud": "Nieuwe concepten voor verdieping en innovatie die overdraagbaar zijn naar andere situaties."
+      }
+    }
+  ],
+  "activiteiten": [
+    {
+      "id": "act.analyseren",
+      "naam": "Analyseren",
+      "beschrijving": "Het analyseren van processen, producten en informatiestromen in hun onderlinge samenhang en context.",
+      "koppelingen": {
+        "ecf_areas": ["Plan"],
+        "sfia_note": "Analyse en requirements engineering",
+        "ecf_context": "e-CF dimension 1 (areas): de activiteit 'analyseren' valt grofweg binnen een deel van het 'area' 'Plan' onderscheiden binnen dimension 1."
+      },
+      "kwaliteitsaspecten": ["security", "budget", "tijd", "duurzaamheid"]
+    },
+    {
+      "id": "act.adviseren",
+      "naam": "Adviseren",
+      "beschrijving": "Het adviseren over de inrichting van processen en/of informatie voor een nieuw te ontwikkelen, aan te schaffen of aan te passen ICT-systeem.",
+      "koppelingen": {
+        "ecf_areas": ["Plan"],
+        "sfia_note": "Business analysis en consultancy",
+        "ecf_context": "e-CF dimension 1 (areas): de activiteit 'adviseren' valt grofweg binnen een deel van het 'area' 'Plan' onderscheiden binnen dimension 1."
+      },
+      "kwaliteitsaspecten": ["security", "budget", "tijd", "duurzaamheid"]
+    },
+    {
+      "id": "act.ontwerpen",
+      "naam": "Ontwerpen",
+      "beschrijving": "Het ontwerpen van een (onderdeel van een) ICT-systeem op basis van requirements.",
+      "koppelingen": {
+        "ecf_areas": ["Plan", "Build"],
+        "sfia_note": "Solution architecture en design",
+        "ecf_context": "e-CF dimension 1 (areas): de activiteit 'ontwerpen' valt grofweg binnen een deel van het 'area' 'Plan' onderscheiden binnen dimension 1."
+      },
+      "kwaliteitsaspecten": ["security", "budget", "tijd", "duurzaamheid"]
+    },
+    {
+      "id": "act.realiseren",
+      "naam": "Realiseren",
+      "beschrijving": "Het realiseren en testen van een (onderdeel van een) ICT-systeem op basis van een ontwerp.",
+      "koppelingen": {
+        "ecf_areas": ["Build"],
+        "sfia_note": "Development en implementation",
+        "ecf_context": "e-CF dimension 1 (areas): de activiteit 'realiseren' valt grofweg binnen het 'area' 'Build' onderscheiden binnen dimension 1."
+      },
+      "kwaliteitsaspecten": ["security", "budget", "tijd", "duurzaamheid"]
+    },
+    {
+      "id": "act.manage_control",
+      "naam": "Manage & Control",
+      "beschrijving": "Het beheren, monitoren en optimaliseren van de ontwikkeling, ingebruikname en het gebruik van ICT-systemen.",
+      "koppelingen": {
+        "ecf_areas": ["Run"],
+        "sfia_note": "Service management en operations",
+        "ecf_context": "e-CF dimension 1 (areas): de activiteit 'manage & control' valt overwegend binnen het 'area' 'Run' onderscheiden binnen dimension 1."
+      },
+      "kwaliteitsaspecten": ["security", "budget", "tijd", "duurzaamheid"]
+    }
+  ],
+  "architectuurlagen": [
+    {
+      "id": "arch.gebruikersinteractie",
+      "naam": "Gebruikersinteractie",
+      "beschrijving": "Communicatie tussen de (eind)gebruiker en het ICT-systeem. Dit betreft niet de interactie met gebruikers tijdens de ontwikkeling van een ICT-systeem, aangezien dat relevant is voor alle architectuurlagen.",
+      "activiteit_niveau_beschrijvingen": [
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Identificeren van de kernelementen van een externe opdracht waarbij verduidelijking wordt gezocht bij opdrachtgever, eindgebruikers en experts"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Benchmarken van functionaliteit, gebruikerservaring, toegankelijkheid, en andere ontwerpaspecten voor een opdrachtgever"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Analyseren van de eindgebruiker en gebruikersinteractie en -ervaring, zowel individueel (fysiek, psychologisch, persoonlijke karakteristieken) als in grotere maatschappelijke context (sociaal, cultureel, ethisch, technologisch)"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Analyseren van maatschappelijke en/of domeinspecifieke trends & kansen en hierover op strategisch niveau communiceren met de key stakeholders"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Inventariseren van opdrachtgevers- en eindgebruikersbehoeften en deze vertalen naar ict-middelen"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Analyseren van bestaande producten of diensten in relatie tot gebruikersbehoeften en kernwaarden van de opdrachtgever"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Inventariseren van relevante data-visualisaties voor een dataset"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Doorlopend evalueren van het effect van de interventie op de gebruikerservaring"
+        }
+      ]
+    },
+    {
+      "id": "arch.organisatieprocessen",
+      "naam": "Organisatieprocessen",
+      "beschrijving": "Het faciliteren van organisatieprocessen door middel van ICT-systemen. Het gaat om de functionaliteit van het systeem als geheel (geautomatiseerde en niet-geautomatiseerde delen), bezien vanuit de context van de te behalen organisatiedoelen.",
+      "activiteit_niveau_beschrijvingen": [
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Analyseren van een enkel(e) organisatie, organisatieproces of procesbesturing op operationeel niveau met bijbehorende gegevensstromen en (gestructureerde) databehoeften"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Knelpunten en oorzaak-gevolgrelaties",
+          "beschrijving": "Analyseren van knelpunten en oorzaak-gevolgrelaties vanuit de invalshoek van de informatievoorziening"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "ICT-mogelijkheden",
+          "beschrijving": "Analyseren van beschikbare ict-mogelijkheden in het veld"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Analyseren van meerdere operationele en tactische organisatieprocessen, inclusief kwaliteit van de bijbehorende data en van de huidige en toekomstige ict-voorziening"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Samenhang knelpunten",
+          "beschrijving": "Analyseren van de samenhang van knelpunten en oorzaak-gevolgrelaties"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "ICT-requirements",
+          "beschrijving": "Vaststellen van de ict-requirements vanuit de behoefte van relevante stakeholders"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Analyseren van de consequenties van een (strategische) koerswijziging voor organisatieprocessen en bijbehorende informatievoorziening"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Huidige en toekomstige situatie",
+          "beschrijving": "Analyseren (kwantitatief en/ of kwalitatief) van de huidige en toekomstige situatie op het gebied van bijvoorbeeld beleid, strategie, alignment en architectuur"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Acceptatie en weerstanden",
+          "beschrijving": "Analyseren van de acceptatie van en eventuele weerstanden tegen de huidige en vernieuwde technologie en organisatieprocessen"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Uitvoeren van grondig theoretisch onderbouwd toegepast onderzoek naar technologische (inter-organisatorische) procesinnovaties"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Adviseren over verbeteringen voor een enkel organisatieproces op het terrein van organisatie(structuur), processen en gestructureerde data, met inachtneming van de mogelijkheden van ict"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Samenhangende oplossingen adviseren voor knelpunten op het terrein van organisatiestructuur, processtructuur en informatievoorziening"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Nieuwe ICT-mogelijkheden",
+          "beschrijving": "Adviseren over nieuwe ict-mogelijkheden, waaronder pakketselectie"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Adviseren over de inrichting van en afstemming tussen business en ict (alignment en governance), rekening houdend met de doelstellingen van de organisatie"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Veranderkundige aanpak",
+          "beschrijving": "Adviseren over een veranderkundige aanpak bij de invoering van nieuwe, duurzame ict-mogelijkheden en organisatieprocessen"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Gestructureerde en ongestructureerde data",
+          "beschrijving": "Adviseren over oplossingen voor gestructureerde en ongestructureerde data, rekening houdend met ethische en juridische aspecten"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Adviseren van organisatorische en technologische (interorganisatorische) procesinnovaties, waarbij rekening wordt gehouden met alle relevante interne en externe stakeholders, de sociale context (mens, maatschappij en organisatie) en ethische en juridische aspecten"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Organisatieprocessen en informatievoorziening",
+          "beschrijving": "Ontwerpen van enkele organisatieprocessen, enkele gegevensstromen van gestructureerde data, de inrichting van een organisatieonderdeel en/of een deel van de informatievoorziening"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Datamanagementplan",
+          "beschrijving": "Opstellen van een eenvoudig datamanagementplan"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Implementatieplan",
+          "beschrijving": "Opstellen van een eenvoudig implementatieplan"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Samenhangende organisatieprocessen",
+          "beschrijving": "Ontwerpen van samenhangende organisatieprocessen: functionele organisatiestructuur, procesmanagement en informatievoorziening, rekening houdend met security en privacywetgeving"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Applicatie interfaces",
+          "beschrijving": "Ontwerpen van de interfaces voor een applicatie in het applicatielandschap (mappings)"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Architectuur en besturingsmodellen",
+          "beschrijving": "Ontwerpen van de architectuur van organisatieprocessen en/of besturingsmodellen, inclusief bijbehorende beheersing met behulp van data-oplossingen, informatievoorziening en veranderproces"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Veranderkundige aanpak",
+          "beschrijving": "Ontwerpen van een veranderkundige aanpak met bijbehorende interventies"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 4,
+          "sub_aspect": "Procesinnovaties",
+          "beschrijving": "Evalueren en valideren van mogelijke procesinnovaties, onder andere aan de hand van data"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Werkinstructies en procedures",
+          "beschrijving": "Beschrijven en opstellen van werkinstructies, functie- en rolbeschrijvingen en procedures voor een (aangepast) proces"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Aansluiting informatievoorziening",
+          "beschrijving": "Testen van de aansluiting van de organisatieprocessen met de opgeleverde informatievoorziening"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Invoering en acceptatie procedures",
+          "beschrijving": "Realiseren van de invoering en acceptatie van procedures in samenhang met nieuwe of gewijzigde informatievoorziening en besturing"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Proof of concept",
+          "beschrijving": "Genereren en valideren van een proof of concept van een applicatie"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Invoering gewijzigde organisatieprocessen",
+          "beschrijving": "Realiseren van invoering en acceptatie van gewijzigde organisatieprocessen op basis van een implementatieplan"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Draagvlak interne stakeholders",
+          "beschrijving": "Creëren van draagvlak voor veranderingen onder alle relevante (interne) stakeholders"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 4,
+          "sub_aspect": "Nieuwe organisatieprocessen en technologische oplossingen",
+          "beschrijving": "Bouwen en valideren van (prototypen van) nieuwe organisatieprocessen en technologische oplossingen voor (interorganisatorische) procesinnovaties"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 4,
+          "sub_aspect": "Draagvlak interne en externe stakeholders",
+          "beschrijving": "Creëren van breed draagvlak voor veranderingen onder alle relevante interne en externe stakeholders"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Procesdocumentatie onderhoud",
+          "beschrijving": "Verrichten van onderhoudswerkzaamheden aan de procesdocumentatie (bijv. business rules, principes en procesmodellen)"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "ICT-processen bewaken",
+          "beschrijving": "Meten en bewaken van ict-processen aan de hand van data"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Veranderbehoefte deelproces",
+          "beschrijving": "Beschrijven van de veranderbehoefte voor een enkel deelproces"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Standaardapplicatie inrichten",
+          "beschrijving": "Inrichten van een standaardapplicatie"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Functionele beheerprocessen",
+          "beschrijving": "Inrichten, onderhouden en actualiseren van (functionele) beheerprocessen"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Organisatieprocessen bewaken",
+          "beschrijving": "Meten en bewaken van organisatieprocessen aan de hand van data"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Veranderbehoefte operationele/tactische processen",
+          "beschrijving": "Signaleren van de veranderbehoefte van meerdere operationele en tactische organisatieprocessen"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Procesarchitectuur",
+          "beschrijving": "Formuleren en actualiseren van principes, business rules en modellen van procesarchitectuur"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Strategische doelen bewaken",
+          "beschrijving": "Meten en bewaken van de strategische doelen van de organisatie aan de hand van data"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Proactief signaleren verandering",
+          "beschrijving": "Proactief signaleren van behoefte aan verandering in alle organisatieprocessen en bijbehorende veranderprocessen in gang zetten"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 4,
+          "sub_aspect": "Procesinnovaties beheren",
+          "beschrijving": "Bedenken van nieuwe organisatorische en technologische oplossingen voor het beheren van (interorganisatorische) procesinnovaties"
+        }
+      ]
+    },
+    {
+      "id": "arch.infrastructuur",
+      "naam": "Infrastructuur",
+      "beschrijving": "Het geheel van ICT-systemen die worden gebruikt om organisatieprocessen te faciliteren. Het gaat om het beschikbaar maken, beschikbaar houden en configureren van traditionele hardware-infrastructuur, maar ook software-infrastructuur.",
+      "activiteit_niveau_beschrijvingen": [
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Analyseren van een eenvoudige infrastructuur volgens een standaardmethode en op basis van gegeven kwaliteitseisen, bijvoorbeeld security"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Analyseren van de kwaliteit van een bestaande infrastructuur en de daarop aanwezige services aan de hand van gangbare methoden en standaarden"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Analyseren van aan infrastructuur gerelateerde incidenten, problemen en security-bedreigingen"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Analyseren van trends en best practices en deze vertalen naar gewenste of benodigde ontwikkelingen in de enterprise infrastructuur"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Uitvoeren van een requirements-impact of gap-analyse voor een enterprise infrastructuur om kwaliteitseisen op te stellen"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Analyseren van technische mogelijkheden en privacy concerns van systemen voor beheer en verwerking van data"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Uitvoeren van een grondig, theoretisch onderbouwd en toegepast onderzoek naar referentiearchitecturen, best practices en standaarden voor cloud-agnostische enterprise infrastructuren of high performance computing om het volwassenheidsniveau bij verschillende organisaties te kunnen bepalen"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Aanbevelingen doen over een opzet van, of aanpassingen aan, een eenvoudige infrastructuur"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Adviseren over inrichting en beheer van een (cloudgebaseerde) infrastructuur met onderbouwde keuzes vanuit kwaliteitseisen, beschikbare technologie en beheermethodes"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Maatregelen voorstellen die de informatiebeveiliging van een infrastructuur verbeteren"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Adviseren over de mogelijke migratie naar of keuze voor bijvoorbeeld een private, hybride of publieke cloud"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Adviseren over zakelijke rechtvaardiging en business-IT alignment van enterprise infrastructuren, inclusief beheer-, beveiliging- en privacy-aspecten, in relatie tot informatie- en referentiearchitecturen"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Adviseren over de inrichting van de infrastructuur voor de verwerking van grote hoeveelheden data"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Adviseren over een cloudmanagementplatform voor DevOps"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Adviseren over de architectuur van een enterprise infrastructuur of high performance computing, inclusief beheer-, beveiliging- en privacy-aspecten, in relatie tot informatie- en referentiearchitecturen, innovatie, maatschappelijke en internationale ontwikkelingen"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Opstellen van specificaties voor een eenvoudige, bijvoorbeeld cloud-gebaseerde, infrastructuur volgens een standaardmethode"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Ontwerpen van een infrastructuur door specificatie van technieken op basis van gegeven requirements met betrekking tot kwaliteitseisen zoals beschikbaarheid, performance, schaalbaarheid, security, privacy en duurzaamheid"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Ontwerpen van een cloud-agnostische enterprise infrastructuur door specificatie van cloudtechnieken op basis van zelf opgestelde requirements binnen de kaders van enterprise architectuur, referentie-architecturen en/of standaarden"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Security Operations Center",
+          "beschrijving": "Ontwerpen van een security operations center (SOC) voor het voorkomen en oplossen van security-incidenten en -problemen"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Ontwerpen van cloud-agnostische enterprise infrastructuren, inclusief de processen, om een hoger volwassenheidsniveau te bereiken"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Inrichten, testen en beschikbaar stellen van (een proof of concept van) een eenvoudige infrastructuur"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Inrichten en testen van (een proof of concept van) een cloudgebaseerde infrastructuur met gebruik van (cloud)technieken waarmee voldaan wordt aan ontwerp en daarin gestelde eisen"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Testplan",
+          "beschrijving": "Opstellen en uitvoeren van een testplan voor een infrastructuur om de kwaliteit te toetsen op basis van de risico's"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Realiseren van (een proof of concept van) een cloud-agnostische infrastructuur door specificatie van cloudtechnieken binnen de kaders van enterprise architectuur, referentiearchitecturen en/of standaarden"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Cloudmanagementplatform",
+          "beschrijving": "Realiseren van een cloudmanagementplatform voor DevOps"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Toepassen van volwassenheidsmodellen bij het realiseren van cloud-agnostische enterprise infrastructuren"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Opzetten en documenteren van standaardbeheerprocessen en werkprocedures voor beheer van een eenvoudige, bijvoorbeeld cloudgebaseerde, infrastructuur"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Implementeren van het beheer van technologische ontwikkelingen m.b.t. de (cloudgebaseerde) infrastructuur"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Beheerprocessen",
+          "beschrijving": "Implementeren van delen van beheerprocessen"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Implementeren van beheerprocessen voor een cloud-agnostische enterprise infrastructuur"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Inbedding in organisatie",
+          "beschrijving": "Inbedden van een vernieuwde infrastructuur in de organisatie"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Vormgeven van Business - IT alignment en IT governance in relatie tot een cloud-agnostische enterprise infrastructuur"
+        }
+      ]
+    },
+    {
+      "id": "arch.software",
+      "naam": "Software",
+      "beschrijving": "Het ontwikkelen van diverse soorten software die na oplevering wordt opgenomen in een ICT-infrastructuur.",
+      "activiteit_niveau_beschrijvingen": [
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Verzamelen en valideren van functionele eisen voor een softwaresysteem met één stakeholder volgens een standaardmethode en het opstellen van acceptatiecriteria"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Functionaliteitsanalyse",
+          "beschrijving": "Uitvoeren van een analyse van de functionaliteit van een bestaand softwaresysteem of bestaande component om de (on)mogelijkheden voor aanpassing vast te stellen"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Data-analyse",
+          "beschrijving": "Analyseren of een gegeven dataset informatie oplevert voor een gegeven toepassing"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Uitvoeren van een requirements-analyse voor een softwaresysteem met verschillende stakeholders, rekening houdend met duurzaamheidsaspecten en andere kwaliteits-eigenschappen waaronder security"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Functionaliteitsanalyse",
+          "beschrijving": "Uitvoeren van een analyse om de functionaliteit, veiligheid, ontwerp, interfaces e.d. van een bestaand softwaresysteem of bestaande component te formuleren en te valideren"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Data-analyse",
+          "beschrijving": "Beoordelen van de kwaliteit van een dataset met onder andere beschrijvende statistiek en visualisaties"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Uitvoeren van een requirements-analyse voor een softwaresysteem met verschillende stakeholders in een context van bestaande systemen"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Acceptatiecriteria en risicoanalyse",
+          "beschrijving": "Definiëren van acceptatiecriteria aan de hand van kwaliteitseigenschappen en een uitgevoerde risicoanalyse met onder andere aandacht voor duurzaamheids-, security- en privacy-aspecten en toegankelijkheid"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Analyse uitvoeren op complexe software-in-software systemen om alle niet-functionele requirements, waaronder safety, security en privacy en de compliance daarvan met wet- en regelgeving te inventariseren om te komen tot best practices en vernieuwde ict-standaarden"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Aanbevelingen doen over specifieke requirements van een softwaresysteem op grond van onderzoek naar bestaande, vergelijkbare systemen"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Adviseren over aanschaf en selectie van softwarecomponenten bij het ontwikkelen van een softwaresysteem op basis van functionaliteit en kosten"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Architectuuradvies",
+          "beschrijving": "Adviseren over een onderdeel van een architectuur of een beperkt softwaresysteem"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Adviseren in de keuze van een data-architectuur voor een data-oplossing, opgebouwd uit bestaande en nieuwe databronnen, waarbij kosten-aspecten en kwaliteitseisen zoals beschikbaarheid, performance, security en schaalbaarheid een rol spelen"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Technologieadvies",
+          "beschrijving": "Adviseren over de toepassing van nieuwe technologieën (zoals machine learning en artificial intelligence) alsmede de impact daarvan op aspecten als duurzaamheid, security en privacy"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Procesadvies",
+          "beschrijving": "Adviseren over de inrichting van een softwareontwikkelproces, waaronder het test- en releaseproces"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Definiëren van een visie ten aanzien van toekomstige technologie in afstemming met stakeholders en compliance met wet- en regelgeving op aspecten van security en privacy"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Ontwerpen van softwaresystemen",
+          "beschrijving": "Maken van een ontwerp voor een softwaresysteem, inclusief database, met modelleertechnieken volgens een standaardmethode"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Ontwerpen van softwaresystemen",
+          "beschrijving": "Opstellen van een ontwerp voor een softwaresysteem, rekening houdend met het gebruik van bestaande componenten en libraries"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Ontwerpen van softwaresystemen",
+          "beschrijving": "Opstellen van een softwarearchitectuur voor een softwaresysteem, opgebouwd uit bestaande en nieuwe systemen, rekening houdend met meerdere stakeholders en kwaliteitseisen"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 4,
+          "sub_aspect": "Ontwerpen van softwaresystemen",
+          "beschrijving": "Opstellen van een herbruikbare softwarearchitectuur voor (cross-platform) softwaresystemen opgebouwd uit bestaande en nieuwe (cloud-based) systemen, rekening houdend met meerdere stakeholders, kwaliteitskenmerken en compliance met wet- en regelgeving"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Ontwerpen van testscripts",
+          "beschrijving": "Opstellen van testscripts voor eind-gebruikers/acceptatietests"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Toepassen van ontwerpkwaliteitscriteria",
+          "beschrijving": "Toepassen van ontwerpkwaliteitscriteria rekening houdend met (duurzaamheids)aspecten zoals privacy, grote hoeveelheden data en gebruik op diverse devices"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Opstellen van teststrategie",
+          "beschrijving": "Opstellen van teststrategie voor systeem- en compliancytesten"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 4,
+          "sub_aspect": "Ontwerpen van generieke softwaresystemen/frameworks",
+          "beschrijving": "Ontwerpen van een softwaresysteem of framework voor het oplossen van een generieke klasse van problemen"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Vaststellen van ontwerpkwaliteit",
+          "beschrijving": "Vaststellen van de kwaliteit van het ontwerp, bijvoorbeeld door toetsing of prototyping, rekening houdend met de geformuleerde kwaliteitseigenschappen"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Ontwerpen van data- en modelarchitectuur",
+          "beschrijving": "Ontwerpen van de data-architectuur en de modelarchitectuur inclusief een teststrategie voor de data en de machine learning-modellen"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Opstellen van testontwerpen",
+          "beschrijving": "Opstellen van testontwerpen volgens een gegeven teststrategie"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Op gestructureerde wijze bouwen, testen en beschikbaar stellen van een eenvoudig softwaresysteem dat werkt met gestructureerde data en voldoet aan de basis kwaliteitseisen"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 1,
+          "sub_aspect": "Unittesten",
+          "beschrijving": "Opstellen en uitvoeren van (geautomatiseerde) unittesten"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Bouwen van een softwaresysteem dat bestaat uit meerdere sub-systemen, gebruikmakend van bestaande of gegenereerde componenten en de gemaakte keuze kunnen beredeneren"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Integratie",
+          "beschrijving": "Integreren van softwarecomponenten in een bestaand softwaresysteem, waarbij onder andere de integriteit, veiligheid en systeemprestaties bewaakt worden"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "UI-testen",
+          "beschrijving": "Opstellen en uitvoeren van (geautomatiseerde) unit- en UI-testen"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Bouwen, testen en beschikbaar stellen van een schaalbaar softwaresysteem dat aansluit bij bestaande systemen, eventueel in de cloud, volgens een ontworpen of gegenereerde architectuur met onderbouwd gebruik van frameworks"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Systeemtesten",
+          "beschrijving": "Opstellen en uitvoeren van regressie-, integratie- en systeemtesten en de uitkomsten ervan evalueren, verwerken en opvolgen"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Refactoring",
+          "beschrijving": "Refactoren van een bestaande applicatie m.b.v. design patterns"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Bouwen en beschikbaar stellen van (zelflerende) softwaresysteem gebaseerd op een model, algoritme of data met wetenschappelijk aantoonbare correcte werking en antwoorden gevend op ethische vragen"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 4,
+          "sub_aspect": "Compliancytesten",
+          "beschrijving": "Opstellen en uitvoeren van (herbruikbare) compliancytesten"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Inrichten en gebruik maken van beheersysteem ter ondersteuning van softwareontwikkeling in teamverband"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Beheren en gebruiken van een ontwikkelstraat ter ondersteuning van softwareontwikkeling in teams, waardoor onder andere continuous integration (CI) tot de mogelijkheden behoort"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 2,
+          "sub_aspect": "Procesmanagement",
+          "beschrijving": "Toepassen van methoden en technieken om een softwareontwikkelproces te managen en de kwaliteit ervan te borgen"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Uitvoeren van configuratie-, change- en releasemanagement in afstemming met infrastructuur-management waardoor CI/CD tot de mogelijkheden behoort"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 3,
+          "sub_aspect": "Ontwikkelstraat",
+          "beschrijving": "Inrichten en evalueren van een ontwikkelstraat met CI/CD ondersteuning"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "(Door)ontwikkelen van methoden en technieken voor het softwareontwikkelproces met als doel de effectiviteit en kwaliteit van het softwaresysteem te verbeteren alsmede de kosten en doorlooptijd van het softwareontwikkelproces te verkleinen"
+        }
+      ]
+    },
+    {
+      "id": "arch.hardware_interfacing",
+      "naam": "Hardware interfacing",
+      "beschrijving": "Software die interacteert met beschikbare hardware. Het betreft situaties waarbij de software expliciet rekening moet houden met de mogelijkheden en beperkingen van de beschikbare hardware. Binnen deze architectuurlaag wordt 'systeem' gekozen als generieke, overkoepelende term, die afhankelijk van de context verder kan worden gespecificeerd als 'embedded system', 'industrial automation', 'virtual system', etc.",
+      "activiteit_niveau_beschrijvingen": [
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Analyseren van een eenvoudig systeem met een beperkt aantal sensoren en actuatoren"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Analyseren van een systeem met meerdere sensoren en actuatoren en de interactie daartussen"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Analyseren van een complex systeem met meerdere sensoren, actuatoren en de interactie daartussen, rekening houdend met real-time constraints"
+        },
+        {
+          "activiteit_id": "act.analyseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Analyseren van een zeer complex systeem met meerdere sensoren, actuatoren en de interactie daartussen, rekening houdend met real-time constraints en veiligheidsaspecten"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Adviseren over de keuze van sensoren en actuatoren voor een eenvoudig systeem"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Adviseren over de keuze van sensoren en actuatoren voor een systeem met meerdere componenten"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Adviseren over de keuze van sensoren en actuatoren voor een complex systeem, rekening houdend met real-time constraints"
+        },
+        {
+          "activiteit_id": "act.adviseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Adviseren over de keuze van sensoren en actuatoren voor een zeer complex systeem, rekening houdend met real-time constraints en veiligheidsaspecten"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Ontwerpen van een eenvoudig systeem met een beperkt aantal sensoren en actuatoren"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Ontwerpen van een systeem met meerdere sensoren en actuatoren en de interactie daartussen"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Ontwerpen van een complex systeem met meerdere sensoren, actuatoren en de interactie daartussen, rekening houdend met real-time constraints"
+        },
+        {
+          "activiteit_id": "act.ontwerpen",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Ontwerpen van een zeer complex systeem met meerdere sensoren, actuatoren en de interactie daartussen, rekening houdend met real-time constraints en veiligheidsaspecten"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Realiseren van een eenvoudig systeem met een beperkt aantal sensoren en actuatoren"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Realiseren van een systeem met meerdere sensoren en actuatoren en de interactie daartussen"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Realiseren van een complex systeem met meerdere sensoren, actuatoren en de interactie daartussen, rekening houdend met real-time constraints"
+        },
+        {
+          "activiteit_id": "act.realiseren",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Realiseren van een zeer complex systeem met meerdere sensoren, actuatoren en de interactie daartussen, rekening houdend met real-time constraints en veiligheidsaspecten"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 1,
+          "beschrijving": "Beheren van een eenvoudig systeem met een beperkt aantal sensoren en actuatoren"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 2,
+          "beschrijving": "Beheren van een systeem met meerdere sensoren en actuatoren en de interactie daartussen"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 3,
+          "beschrijving": "Beheren van een complex systeem met meerdere sensoren, actuatoren en de interactie daartussen, rekening houdend met real-time constraints"
+        },
+        {
+          "activiteit_id": "act.manage_control",
+          "beheersingsniveau_id": 4,
+          "beschrijving": "Beheren van een zeer complex systeem met meerdere sensoren, actuatoren en de interactie daartussen, rekening houdend met real-time constraints en veiligheidsaspecten"
+        }
+      ]
+    }
+  ],
+  "professional_skills": {
+    "aandachtsgebieden": [
+      {
+        "id": "ps.toekomstgericht_organiseren",
+        "naam": "Toekomstgericht organiseren",
+        "beschrijving": "Het vermogen om organisaties toekomstbestendig te maken.",
+        "competenties": [
+          {
+            "id": "ps.competentie.organisatorische_context",
+            "naam": "Organisatorische context",
+            "beschrijving": "Begrijpt de organisatorische context en kan hierop inspelen."
+          },
+          {
+            "id": "ps.competentie.ethiek",
+            "naam": "Ethiek",
+            "beschrijving": "Hanteert ethische principes in professionele context."
+          },
+          {
+            "id": "ps.competentie.procesmanagement",
+            "naam": "Procesmanagement",
+            "beschrijving": "Beheert en verbetert bedrijfsprocessen."
+          }
+        ]
+      },
+      {
+        "id": "ps.onderzoekend_vermogen",
+        "naam": "Onderzoekend vermogen",
+        "beschrijving": "Het vermogen om systematisch onderzoek te verrichten.",
+        "competenties": [
+          {
+            "id": "ps.competentie.methodische_probleemaanpak",
+            "naam": "Methodische probleemaanpak",
+            "beschrijving": "Hanteert een methodische aanpak bij het oplossen van problemen."
+          },
+          {
+            "id": "ps.competentie.onderzoek",
+            "naam": "Onderzoek",
+            "beschrijving": "Voert systematisch onderzoek uit."
+          },
+          {
+            "id": "ps.competentie.oplossing",
+            "naam": "Oplossing",
+            "beschrijving": "Ontwikkelt en implementeert oplossingen."
+          }
+        ]
+      },
+      {
+        "id": "ps.persoonlijk_leiderschap",
+        "naam": "Persoonlijk leiderschap",
+        "beschrijving": "Het vermogen om leiding te geven aan zichzelf en anderen.",
+        "competenties": [
+          {
+            "id": "ps.competentie.ondernemend_zijn",
+            "naam": "Ondernemend zijn",
+            "beschrijving": "Toont ondernemerschap en initiatief."
+          },
+          {
+            "id": "ps.competentie.persoonlijke_ontwikkeling",
+            "naam": "Persoonlijke ontwikkeling",
+            "beschrijving": "Werkt continu aan persoonlijke ontwikkeling."
+          },
+          {
+            "id": "ps.competentie.persoonlijke_profilering",
+            "naam": "Persoonlijke profilering",
+            "beschrijving": "Profileert zichzelf effectief in professionele context."
+          }
+        ]
+      },
+      {
+        "id": "ps.doelgericht_interacteren",
+        "naam": "Doelgericht interacteren",
+        "beschrijving": "Het vermogen om effectief te communiceren en samen te werken.",
+        "competenties": [
+          {
+            "id": "ps.competentie.partners",
+            "naam": "Partners",
+            "beschrijving": "Bouwt en onderhoudt professionele relaties."
+          },
+          {
+            "id": "ps.competentie.communicatie",
+            "naam": "Communicatie",
+            "beschrijving": "Communiceert effectief in verschillende contexten."
+          },
+          {
+            "id": "ps.competentie.samenwerken",
+            "naam": "Samenwerken",
+            "beschrijving": "Werkt effectief samen in teams."
+          }
+        ]
+      }
+    ]
+  },
+  "beroepstaken": [
+    {
+      "id": "bt.software.analyseren.3",
+      "titel": "Requirements-analyse voor softwaresysteem",
+      "beschrijving": "Uitvoeren van een requirements-analyse voor een softwaresysteem met verschillende stakeholders in een context van bestaande systemen.",
+      "activiteit_id": "act.analyseren",
+      "architectuurlaag_id": "arch.software",
+      "beheersingsniveau_id": 3,
+      "kwaliteitseisen": ["security", "performance"],
+      "voorbeelden": [
+        "Analyse uitvoeren op de integratie van een nieuw CRM-systeem in een bestaande applicatieomgeving.",
+        "Inventariseren van security-eisen bij uitbreiding van een bestaand softwaresysteem."
+      ],
+      "bronverwijzing": {
+        "pagina": 45,
+        "paragraaf": "3.2.1"
+      },
+      "role": "exemplar"
+    }
+  ],
+  "verbanden": {
+    "activiteit_naar_professional_skills": [
+      {
+        "activiteit_id": "act.analyseren",
+        "competentie_ids": [
+          "ps.competentie.methodische_probleemaanpak",
+          "ps.competentie.onderzoek",
+          "ps.competentie.communicatie"
+        ],
+        "notities": "Analyse vereist methodische aanpak, onderzoek en communicatie met stakeholders"
+      }
+    ]
+  },
+  "raamwerken": {
+    "beheersingsniveaus_crosswalk": [
+      {
+        "hboi_niveau": 1,
+        "nlqf": 5,
+        "qf_ehea": "short",
+        "eqf": 5,
+        "ecf_proficiency": "e2",
+        "sfia_responsibility": 2,
+        "bron": {
+          "pagina": 27,
+          "sectie": "kruistabel beheersingsniveaus"
+        }
+      },
+      {
+        "hboi_niveau": 2,
+        "nlqf": 6,
+        "qf_ehea": "first",
+        "eqf": 6,
+        "ecf_proficiency": "e3",
+        "sfia_responsibility": 3,
+        "bron": {
+          "pagina": 27,
+          "sectie": "kruistabel beheersingsniveaus"
+        }
+      },
+      {
+        "hboi_niveau": 3,
+        "nlqf": 7,
+        "qf_ehea": "second",
+        "eqf": 7,
+        "ecf_proficiency": "e4",
+        "sfia_responsibility": 4,
+        "bron": {
+          "pagina": 27,
+          "sectie": "kruistabel beheersingsniveaus"
+        }
+      },
+      {
+        "hboi_niveau": 4,
+        "nlqf": 8,
+        "qf_ehea": "third",
+        "eqf": 8,
+        "ecf_proficiency": "e5",
+        "sfia_responsibility": 5,
+        "bron": {
+          "pagina": 27,
+          "sectie": "kruistabel beheersingsniveaus"
+        }
+      }
+    ]
+  },
+  "bijlagen": {
+    "bronnen": [
+      {
+        "titel": "European e-Competence Framework (e-CF)",
+        "url": "https://www.ecompetences.eu/",
+        "bron": {
+          "pagina": 43,
+          "sectie": "bronnenlijst"
+        }
+      },
+      {
+        "titel": "Skills Framework for the Information Age (SFIA)",
+        "url": "https://www.sfia-online.org/",
+        "bron": {
+          "pagina": 43,
+          "sectie": "bronnenlijst"
+        }
+      },
+      {
+        "titel": "Nederlands Kwalificatiekader (NLQF)",
+        "url": "https://www.nlqf.nl/",
+        "bron": {
+          "pagina": 43,
+          "sectie": "bronnenlijst"
+        }
+      }
+    ],
+    "afkortingen": [
+      {
+        "term": "e-CF",
+        "uitleg": "European e-Competence Framework",
+        "bron": {
+          "pagina": 44,
+          "sectie": "afkortingen"
+        }
+      },
+      {
+        "term": "SFIA",
+        "uitleg": "Skills Framework for the Information Age",
+        "bron": {
+          "pagina": 44,
+          "sectie": "afkortingen"
+        }
+      },
+      {
+        "term": "NLQF",
+        "uitleg": "Nederlands Kwalificatiekader",
+        "bron": {
+          "pagina": 44,
+          "sectie": "afkortingen"
+        }
+      },
+      {
+        "term": "EQF",
+        "uitleg": "European Qualifications Framework",
+        "bron": {
+          "pagina": 44,
+          "sectie": "afkortingen"
+        }
+      },
+      {
+        "term": "QF-EHEA",
+        "uitleg": "Qualifications Framework for the European Higher Education Area",
+        "bron": {
+          "pagina": 44,
+          "sectie": "afkortingen"
+        }
+      }
+    ]
+  }
+}

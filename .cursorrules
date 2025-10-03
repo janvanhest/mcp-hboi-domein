@@ -1,0 +1,81 @@
+# HBOI MCP Server - Cursor Rules
+
+## Project Overview
+
+This is an HBOI (HBO-i) MCP (Model Context Protocol) server that provides tools and resources for HBO-i domain expertise. The project includes a comprehensive JSON schema, TypeScript services, and MCP server implementation.
+
+## Key Files
+
+- `hboi.schema.json` - JSON schema for HBO-i canonical dataset
+- `hboi.example.json` - Example data conforming to the schema
+- `src/index.ts` - MCP server implementation
+- `src/services/` - Business logic services
+- `src/types/hboi.types.ts` - Generated TypeScript types
+
+## Coding Standards
+
+- Use TypeScript for all new code
+- Follow existing project structure and conventions
+- Write self-documenting code with descriptive naming
+- Apply DRY and KISS principles
+- Prioritize readability and developer experience
+- Never use 'any' type unless absolutely necessary with documented justification
+- Focus on clean, passing code with zero technical debt
+
+## Testing
+
+- Write comprehensive tests for all new functionality
+- Use Jest for testing framework
+- Maintain high test coverage (target: 80%+)
+- Test both success and error scenarios
+- Use mock data from `src/__tests__/fixtures/mockHboiData.ts`
+
+## MCP Server Development
+
+- All tools should have proper input schemas
+- Include comprehensive error handling
+- Use async/await for all asynchronous operations
+- Validate inputs using the JSON schema
+- Return meaningful error messages
+
+## Data Validation
+
+- Always validate data against the JSON schema
+- Use the HboiValidator service for validation
+- Cache validated data for performance
+- Handle validation errors gracefully
+
+## Performance
+
+- Use caching where appropriate
+- Implement lazy loading for large datasets
+- Optimize queries and data access
+- Monitor memory usage
+
+## Documentation
+
+- Update README.md for significant changes
+- Document new tools and their usage
+- Include examples in documentation
+- Keep inline comments up to date
+
+## Dependencies
+
+- Use yarn instead of npm for package management
+- Keep dependencies up to date
+- Use exact versions for critical dependencies
+- Document any new dependencies
+
+## Error Handling
+
+- Use try-catch blocks for error handling
+- Provide meaningful error messages
+- Log errors appropriately
+- Implement graceful degradation
+
+## Code Organization
+
+- Keep services focused and single-purpose
+- Use dependency injection where appropriate
+- Separate concerns (data, business logic, presentation)
+- Follow clean architecture principles
